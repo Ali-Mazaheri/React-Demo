@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import { Todo } from './Components/Todo';
-import rawData from "./Utils/todoData.json"
+import { TodoModel } from "./Models/TodoModel";
+import { LocalStorageService } from "./Services/LocalStorageService";
 
-const data = [...rawData.data];
-
-class App extends Component<any, any> {
-  render() {
-    return <Todo data={data}/>
-  }
+let storage = new LocalStorageService("reactDemoWFM");
+const data = storage.getAll<TodoModel>();
+if (!data.length) {
+  data.push(new TodoModel("Add new items"));
 }
 
-export default App;
+export class App extends Component<any, any> {
+  render() {
+    return <Todo updateStore={() => { storage.write(data) }}  data={data}/>
+  }
+}
