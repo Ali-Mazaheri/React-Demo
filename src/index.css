@@ -2,73 +2,72 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
 }
 
-*{
+* {
   box-sizing: border-box;
 }
 
-.todoComponent{
+.todoComponent {
   width: 350px;
-  border: solid 2px purple;
+  border: solid 1px purple;
   display: inline-block;
   margin: 10px;
   padding: 10px;
 }
 
-.todoEntry input{
+.todoEntry input {
   width: calc(100% - 25px);
   padding: 0 2px;
 }
-.todoItem{
+
+.todoItem {
   display: flex;
   align-items: center;
   align-content: space-between;
 }
 
-.TodoTitle{
+.TodoTitle {
   height: 20px;
   margin-left: 1px;
   flex: 1;
   border: none;
-  background-color:  #fafafa;;
+  background-color: #fafafa;
 }
 
-.TodoTitle.done{
+.TodoTitle.done {
   text-decoration: line-through;
 }
 
-.button{
+.button {
   cursor: pointer;
   margin-left: 5px;
   user-select: none;
   display: inline-block;
   width: 20px;
   text-align: center;
-  text-shadow: 0px 0px 1px black;
+  text-shadow: 1px 1px 1px gray;
 }
 
-.button:hover{
-  color: rgba(0,0,150,0.5);
-  text-shadow: 0 0 2px navy;
+.button:hover {
+  text-shadow: 1px 0px 1px navy;
 }
 
-.customCheckbox>input{
+.customCheckbox>input {
   display: none;
 }
 
-.customCheckbox>input+label:before{
+.customCheckbox>input+label:before {
+  padding: 0 5px 0 0;
+  text-shadow: 1px 1px 1px gray;
   cursor: pointer;
   font-size: 20px;
   text-align: center;
   display: inline-block;
   width: 20px;
-  content: '\2610';
+  content: "\2610";
 }
 
-.customCheckbox>input:checked+label:before{
-  content: '\2611';
+.customCheckbox>input:checked+label:before {
+  content: "\2611";
 }

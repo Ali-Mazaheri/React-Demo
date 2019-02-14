@@ -24,7 +24,7 @@ export class TodoItem extends Component<any, any>{
                     this.updateStore(this.state.item);
                 }} />
 
-                <input className={"TodoTitle" + (item.done? " done": "")} type="text" value={item.title} onChange={(e) => {
+                <input className={"TodoTitle" + (item.done ? " done" : "")} type="text" value={item.title} onChange={(e) => {
                     let newState = e.currentTarget.value;
                     Object.assign(this.state.item, { title: newState });
                     this.updateStore(this.state.item);
